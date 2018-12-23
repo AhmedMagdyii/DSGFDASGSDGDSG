@@ -12,7 +12,6 @@ const UserBlocked = new Set();
 const prefix = '*M'
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`Say *Mhelp || *Minvite`," ")
   console.log('')
   console.log('')
   console.log('╔[═════════════════════════════════════════════════════════════════]╗')
@@ -42,8 +41,30 @@ client.on('ready', () => {
   console.log('')
 });
 
+//---
+
+client.on('ready', function(){
+    var ms = 7000;
+    var setGame = [`©GMZN Host`,'©GMZN Host','©جمزن هوست','Say : *Mhelp || *Minvite'];
+    var i = -1;
+    var j = 0;
+    setInterval(function (){
+        if( i == -1 ){
+            j = 1;
+        }
+        if( i == (setGame.length)-1 ){
+            j = -1;
+        }
+        i = i+j;
+        client.user.setGame(setGame[i]);
+    }, ms);1700
+ 
+ 
+ 
+})
 
 
+//----
 
 
 
