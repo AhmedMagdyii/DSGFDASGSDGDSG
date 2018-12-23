@@ -47,63 +47,28 @@ client.on('ready', () => {
 
 
 
-//كود الموسيقي
+client.on("message", message => {
+  var prefix = "*";
+if (message.content === "*Mhelp") {
+   message.channel.send('**تم ارسالك في الخاص** :mailbox_with_mail: ');
+const embed = new Discord.RichEmbed()
+    .setDescription(`
+   [❖═══════ اوامر اغاني═══════❖]
+** *Mplay ~ لتشغيل الاغنيه**
+** *Mstop ~ لأيقاف الاغنيه**
+** *Mskip ~ لتخطي الاغنيه**
+** *Mvol <namber> ~ ل تعلية واخفاض صوت الاغنيه**
+** *Mpause ~ لأيقاف الاغنيه موقتا**
+** *Mresume ~ لأستمرار الاغنيه**
+`)
+ message.author.sendEmbed(embed)
+ 
+ }
+ });
 
-//    Packages
 
- 
- 
- 
- 
- 
- 
- 
-// bot
- 
- 
- 
- 
-//help
-client.on('message', message => {
-    if (message.content === ".dservers") {
-    let embed = new Discord.RichEmbed()
- .setColor("#0000FF")
- .addField("**Server: **" , client.guilds.size)
- message.channel.sendEmbed(embed);
-   }
-if (message.content === '*Mhelp') {    
-         const embed = new Discord.RichEmbed()
-.setThumbnail(message.author.avatarURL)    
-.addField('** *Mplay <name>** ' , '**لتشغيل المسيقى **')
- 
-.addField('** *Mstop** ' , '**لتوقف المسيقى **')
- 
-.addField('** *Mskip** ' , '**لتخطي الاغنية **')
- 
-.addField('** *Mvol <number>** ' , '**لتغيير الصوت **')
- 
-.addField('** *Mpuase** ' , '**ايقاف بشكل موقت **')
- 
-.addField('** *Mresume** ' , '**استاناف الموسيقى **')
-        .setColor('RANDOM')    
- message.author.sendEmbed(embed);
- message.react("👌")
-   }
-});
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+//--------------------------------------------------------
+
 ///music
 client.on('warn', console.warn);
  
@@ -438,6 +403,7 @@ function play(guild, song) {
 })
 }
 });
+
 
 
 client.login(process.env.BOT_TOKEN);
