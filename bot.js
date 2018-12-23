@@ -86,9 +86,11 @@ if (message.content === '*Mhelp') {
  
 .addField('** *Mvol <number>** ' , '**لتغيير الصوت **')
  
-.addField('** *Mpuase** ' , '**ايقاف بشكل موقت **')
+.addField('** *Mpause** ' , '**ايقاف بشكل موقت **')
  
-.addField('** *Mresume** ' , '**استاناف الموسيقى **')
+.addField('** *Mresume** ' , '**استمرار الموسيقى **')
+
+.addField('** *Mnp** ' , ' **لمعرفة الاغنية الحالية**')
         .setColor('RANDOM')    
  message.author.sendEmbed(embed);
  message.react("👌")
