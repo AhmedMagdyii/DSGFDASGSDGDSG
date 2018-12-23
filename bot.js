@@ -41,6 +41,26 @@ client.on('ready', () => {
   console.log('')
 });
 
+//-----
+
+client.on('message' , message => {
+ 
+    if (message.content === "*Minvite") {
+        message.reply(`تم ارساله الرابط في الخاص`)
+        if(!message.channel.guild) return message.reply('**الآمر فقط في السيرفرات**');
+     const embed = new Discord.RichEmbed()
+ .setColor("RANDOM")
+ .setThumbnail(client.user.avatarURL)    
+ .setDescription("دعوة اضافة البوت" + `
+ **
+رابط البوت |
+http://cutt.us/GMZNMusicDiscord
+ **
+`);
+  message.author.sendEmbed(embed);
+   }
+});
+
 //---
 
 client.on('ready', function(){
